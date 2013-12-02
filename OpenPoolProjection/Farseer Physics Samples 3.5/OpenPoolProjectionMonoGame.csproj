@@ -88,7 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Farseer Physics DebugView 3.5\DebugView MonoGame.csproj">
-      <Project>{566F1803-90B5-4947-8730-57F092FBB002}</Project>
+      <Project>{566f1803-90b5-4947-8730-57f092fbb002}</Project>
       <Name>DebugView MonoGame</Name>
     </ProjectReference>
     <ProjectReference Include="..\Farseer Physics Engine 3.5\Farseer Physics MonoGame.csproj">
