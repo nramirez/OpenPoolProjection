@@ -44,7 +44,6 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Demos\GameDemo1.cs" />
     <Compile Include="Demos\Prefabs\Agent.cs" />
     <Compile Include="Demos\Prefabs\Border.cs" />
     <Compile Include="Demos\Prefabs\Objects.cs" />

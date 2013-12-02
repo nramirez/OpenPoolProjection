@@ -17,7 +17,6 @@ namespace FarseerPhysics.Samples.ScreenSystem
 
         private Texture2D _backgroundTexture;
         private Rectangle _logoDestination;
-        private Texture2D _logoTexture;
         private Rectangle _viewport;
 
         /// <summary>
@@ -31,16 +30,15 @@ namespace FarseerPhysics.Samples.ScreenSystem
 
         public override void LoadContent()
         {
-            _logoTexture = ScreenManager.Content.Load<Texture2D>("Common/logo");
             _backgroundTexture = ScreenManager.Content.Load<Texture2D>("Common/gradient");
 
-            Viewport viewport = ScreenManager.GraphicsDevice.Viewport;
-            Vector2 logoSize = new Vector2();
+            var viewport = ScreenManager.GraphicsDevice.Viewport;
+            var logoSize = new Vector2();
             logoSize.Y = viewport.Height * LogoScreenHeightRatio;
             logoSize.X = logoSize.Y * LogoWidthHeightRatio;
 
-            float border = viewport.Height * LogoScreenBorderRatio;
-            Vector2 logoPosition = new Vector2(viewport.Width - border - logoSize.X, viewport.Height - border - logoSize.Y);
+            var border = viewport.Height * LogoScreenBorderRatio;
+            var logoPosition = new Vector2(viewport.Width - border - logoSize.X, viewport.Height - border - logoSize.Y);
             _logoDestination = new Rectangle((int)logoPosition.X, (int)logoPosition.Y, (int)logoSize.X, (int)logoSize.Y);
             _viewport = viewport.Bounds;
         }
@@ -64,7 +62,6 @@ namespace FarseerPhysics.Samples.ScreenSystem
         {
             ScreenManager.SpriteBatch.Begin();
             ScreenManager.SpriteBatch.Draw(_backgroundTexture, _viewport, Color.White);
-            ScreenManager.SpriteBatch.Draw(_logoTexture, _logoDestination, Color.White * 0.6f);
             ScreenManager.SpriteBatch.End();
         }
     }

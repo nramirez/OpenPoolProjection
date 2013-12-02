@@ -21,24 +21,18 @@ namespace FarseerPhysics.Samples.Demos
         public string GetDetails()
         {
             var sb = new StringBuilder();
-            sb.AppendLine("This demo shows how to setup complex collision scenerios.");
+            sb.AppendLine("This project try to demonstrate physics of billiard game");
             sb.AppendLine("In this demo:");
-            sb.AppendLine("  - Circles and rectangles are set to only collide with themselves.");
-            sb.AppendLine("  - Stars are set to collide with gears.");
-            sb.AppendLine("  - Gears are set to collide with stars.");
-            sb.AppendLine("  - The agent is set to collide with everything but stars");
+            sb.AppendLine("  - Circles are set to only collide with themselves.");
             sb.AppendLine(string.Empty);
             sb.AppendLine("GamePad:");
             sb.AppendLine("  - Rotate agent: left and right triggers");
-            sb.AppendLine("  - Move agent: right thumbstick");
             sb.AppendLine("  - Move cursor: left thumbstick");
             sb.AppendLine("  - Grab object (beneath cursor): A button");
             sb.AppendLine("  - Drag grabbed object: left thumbstick");
             sb.AppendLine("  - Exit to menu: Back button");
             sb.AppendLine(string.Empty);
             sb.AppendLine("Keyboard:");
-            sb.AppendLine("  - Rotate agent: left and right arrows");
-            sb.AppendLine("  - Move agent: A,S,D,W");
             sb.AppendLine("  - Exit to menu: Escape");
             sb.AppendLine(string.Empty);
             sb.AppendLine("Mouse / Touchscreen");

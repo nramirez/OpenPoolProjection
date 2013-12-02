@@ -14,7 +14,7 @@ namespace FarseerPhysics.Samples
 
         public FarseerPhysicsGame()
         {
-            Window.Title = "Farseer Samples Framework";
+            Window.Title = "OpenPoolProjectio with Farseer Physics and MonoGame";
             _graphics = new GraphicsDeviceManager(this);
             _graphics.PreferMultiSampling = true;
 #if WINDOWS || XBOX
@@ -59,7 +59,7 @@ namespace FarseerPhysics.Samples
 
             var simple5 = new SimpleDemo5();
 
-            var menuScreen = new MenuScreen("Farseer Samples");
+            var menuScreen = new MenuScreen("Open Pool Projection");
             menuScreen.AddMenuItem("", EntryType.Separator, null);
             menuScreen.AddMenuItem(simple5.GetTitle(), EntryType.Screen, simple5);
 
@@ -68,7 +68,6 @@ namespace FarseerPhysics.Samples
 
             ScreenManager.AddScreen(new BackgroundScreen());
             ScreenManager.AddScreen(menuScreen);
-            ScreenManager.AddScreen(new LogoScreen(TimeSpan.FromSeconds(3.0)));
         }
     }
 }
