@@ -14,7 +14,7 @@ namespace FarseerPhysics.Samples
 
         public FarseerPhysicsGame()
         {
-            Window.Title = "OpenPoolProjectio with Farseer Physics and MonoGame";
+            Window.Title = "OpenPoolProjection with Farseer Physics and MonoGame";
             _graphics = new GraphicsDeviceManager(this);
             _graphics.PreferMultiSampling = true;
 #if WINDOWS || XBOX

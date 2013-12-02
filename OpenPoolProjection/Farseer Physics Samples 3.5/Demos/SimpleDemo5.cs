@@ -10,6 +10,10 @@ namespace FarseerPhysics.Samples.Demos
     {
         private Border _border;
         private Objects _circles;
+        private Objects _circles1;
+        private Objects _circles2;
+        private Objects _circles3;
+        private Objects _circles4;
 
         #region IDemoScreen Members
 
@@ -51,9 +55,66 @@ namespace FarseerPhysics.Samples.Demos
 
             _border = new Border(World, ScreenManager, Camera);
 
-            var startPosition = new Vector2(-10f, 0f);
-            var endPosition = new Vector2(10, 0f);
-            _circles = new Objects(World, ScreenManager, startPosition, endPosition, 15, 0.6f, ObjectType.Circle)
+
+
+            var startXPoint = -10f;
+            var startYPoint = -3f;
+            var diameter = 1.2f;
+            var ballCount = 5;
+            var startPosition = new Vector2(startXPoint, startYPoint);
+            var endPosition = new Vector2(startXPoint, startYPoint + ((diameter-0.2f) * ballCount));
+
+            _circles = new Objects(World, ScreenManager, startPosition, endPosition, ballCount, diameter/2f, ObjectType.Circle)
+            {
+                //Collide with itself only
+                CollisionCategories = Category.Cat1,
+                CollidesWith = Category.Cat1
+            };
+
+            startXPoint+=1.1f;
+            startYPoint += 0.6f;
+            ballCount=4;
+            startPosition = new Vector2(startXPoint, startYPoint);
+            endPosition = new Vector2(startXPoint, startYPoint + ((diameter - 0.2f) * ballCount));
+            _circles1 = new Objects(World, ScreenManager, startPosition, endPosition, ballCount, diameter / 2f, ObjectType.Circle)
+            {
+                //Collide with itself only
+                CollisionCategories = Category.Cat1,
+                CollidesWith = Category.Cat1
+            };
+
+            startXPoint += 1.1f;
+            startYPoint += 0.6f;
+            ballCount = 3;
+            startPosition = new Vector2(startXPoint, startYPoint);
+            endPosition = new Vector2(startXPoint, startYPoint + ((diameter -0.3f) * ballCount));
+            _circles2 = new Objects(World, ScreenManager, startPosition, endPosition, ballCount, diameter / 2f, ObjectType.Circle)
+            {
+                //Collide with itself only
+                CollisionCategories = Category.Cat1,
+                CollidesWith = Category.Cat1
+            };
+
+            startXPoint += 1.1f;
+            startYPoint += 0.6f;
+            ballCount = 2;
+            startPosition = new Vector2(startXPoint, startYPoint);
+            endPosition = new Vector2(startXPoint, startYPoint + ((diameter - 0.5f) * ballCount));
+            _circles3 = new Objects(World, ScreenManager, startPosition, endPosition, ballCount, diameter / 2f, ObjectType.Circle)
+            {
+                //Collide with itself only
+                CollisionCategories = Category.Cat1,
+                CollidesWith = Category.Cat1
+            };
+
+
+            startXPoint += 1f;
+            startYPoint += 0.7f;
+            ballCount = 2;
+            startPosition = new Vector2(startXPoint, startYPoint);
+            endPosition = new Vector2(startXPoint *-1f, startYPoint);
+
+            _circles4 = new Objects(World, ScreenManager, startPosition, endPosition, ballCount, diameter / 2f, ObjectType.Circle)
             {
                 //Collide with itself only
                 CollisionCategories = Category.Cat1,
@@ -68,7 +129,10 @@ namespace FarseerPhysics.Samples.Demos
             ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.View);
 
             _circles.Draw();
-
+            _circles1.Draw();
+            _circles2.Draw();
+            _circles3.Draw();
+            _circles4.Draw();
             ScreenManager.SpriteBatch.End();
             _border.Draw();
             base.Draw(gameTime);
